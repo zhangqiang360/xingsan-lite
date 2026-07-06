@@ -74,17 +74,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino 
 .kpi-detail p { font-size:13px; color:var(--sub); line-height:1.7; }
 .kpi-formula { background:#f1f5f9; padding:12px 16px; border-radius:8px; font-family:'SF Mono',monospace; font-size:13px; margin:12px 0; }
 
-/* Query 方法论 */
-.q-method { background:var(--accent-light); border-left:3px solid var(--accent); padding:16px 20px; border-radius:0 8px 8px 0; font-size:13px; margin:20px 0; line-height:1.8; }
-.q-method strong { color:var(--accent); }
-.core-word { display:inline-block; background:var(--accent); color:#fff; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; }
-.sem-tag { display:inline-block; background:#f1f5f9; color:#475569; border:1px solid #e2e8f0; padding:2px 7px; border-radius:4px; font-size:10px; margin:1px 3px; white-space:nowrap; }
+/* Query 方法论 - Advance AI 对齐 */
+.q-core { font-size:10px; color:var(--accent); font-weight:600; }
+.q-sem { font-size:10px; color:var(--sub); }
 .q-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-.q-table.qw { min-width:860px; }
-.q-table.qw th { font-size:11px; padding:10px 8px; white-space:nowrap; }
-.q-table.qw td { font-size:12px; padding:10px 8px; vertical-align:top; line-height:1.7; }
-.q-table.qw td:nth-child(3) { min-width:160px; }
-.q-table.qw td:nth-child(4) { min-width:200px; }
 
 /* CTA */
 .cta-section { background:linear-gradient(135deg,#1e3a5f,#2563eb); color:#fff; text-align:center; padding:48px 24px; border-radius:var(--radius); margin:48px 0; }
@@ -178,111 +171,89 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
 <!-- Query 详情 -->
 <section class="section">
   <div class="section-num">04 · 首期 Query 详情</div>
-  <h2 class="section-title">10 个问题词，四类入口覆盖出海风控决策链</h2>
+  <h2 class="section-title">9 个问题词，四类语义入口覆盖出海金融风控决策链</h2>
 
-  <div class="q-method">
-    <strong>🔑 360 智见词策略：三词模型</strong><br>
-    GEO 关键词体系分三层：<span class="core-word" style="vertical-align:middle">核心词</span> 锁定业务方向 → <span class="sem-tag" style="vertical-align:middle">语义词</span> 扩展 AI 理解的上下文 → <strong>问题词（Query）</strong> 以用户真实提问形态触发 AI 推荐。核心词决定能否被召回，语义词决定推荐的场景精度，问题词决定触达的实际用户量。本次 10 个 Query 全部为「问题词」形态——这是 AI 最偏好引用、用户实际搜索量最高的词类。
+  <div class="highlight" style="margin-bottom:20px;">
+    首期锁定 9 个建议做 Query，剔除品牌中正词与已达高标的精准场景词。每个 Query 均为用户向 AI 提问的真实语句（问题词），附<span style="color:var(--accent);font-weight:600;">核心词</span>与<span style="color:var(--sub);">推荐语义词</span>展示底层关键词策略。<br>目标：3 个月内建议做词达标/推荐率 ≥ 70%，覆盖 5 个主流 AI 平台。
   </div>
 
   <div class="q-table-wrap">
-  <table class="q-table qw">
+  <table class="q-table">
     <thead>
-      <tr><th>#</th><th>语义归类</th><th>核心词 → 语义词（推荐）</th><th>Query（用户真实提问 · 问题词）</th><th>当前</th><th>策略</th></tr>
+      <tr><th>#</th><th>Query（用户向 AI 提问的真实语句）</th><th>核心词 → 语义词</th><th>当前</th><th>首期策略</th></tr>
     </thead>
     <tbody>
-      <!-- A类: 风控系统选型 -->
       <tr>
         <td class="q-num">1</td>
-        <td><span class="core-word">A 风控选型</span></td>
-        <td><strong>出海风控系统</strong> <span style="color:var(--sub);font-size:11px;">→ 选型指南、服务商推荐、功能对比、考察维度</span></td>
-        <td>出海企业选择风控系统时，应该重点考察哪些能力和服务商？</td>
+        <td>出海金融企业选择风控系统时，应该重点考察哪些技术能力和服务商？<br><span class="q-core">KYC / 征信选择</span></td>
+        <td><span class="q-core">出海风控系统</span> <span class="q-sem">→ 选型指南 · 服务商推荐 · 功能对比 · 技术能力</span></td>
         <td><span class="badge badge-red">0%</span></td>
-        <td>建立完整选型评估框架，绑定 adbancd 多国覆盖+私有化部署</td>
+        <td>优先突破，建立推荐理由</td>
       </tr>
       <tr>
         <td class="q-num">2</td>
-        <td><span class="core-word">A 风控选型</span></td>
-        <td><strong>反欺诈平台</strong> <span style="color:var(--sub);font-size:11px;">→ 全球覆盖、企业级、稳定性、实时响应</span></td>
-        <td>面向出海业务的风控/反欺诈平台哪个覆盖国家更广、响应更快？</td>
+        <td>面向出海业务的风控和反欺诈平台哪个系统更稳定、覆盖国家更广？<br><span class="q-core">反欺诈 / 风控系统</span></td>
+        <td><span class="q-core">反欺诈平台</span> <span class="q-sem">→ 全球覆盖 · 企业级 · 稳定性 · 实时响应</span></td>
         <td><span class="badge badge-red">0%</span></td>
-        <td>用覆盖国家数+响应速度建立量化对比，突出 adbancd 竞争力</td>
+        <td>全球覆盖补齐，稳定性补强</td>
       </tr>
-      <tr>
-        <td class="q-num">9</td>
-        <td><span class="core-word">A 风控选型</span></td>
-        <td><strong>信贷风控系统</strong> <span style="color:var(--sub);font-size:11px;">→ 海外线上信贷、核心模块、系统选型、信审决策</span></td>
-        <td>海外线上信贷业务的风控系统怎么选？需要哪些核心模块？</td>
-        <td><span class="badge badge-yellow">15%</span></td>
-        <td>按模块拆解（反欺诈/信审/催收），每个模块关联 adbancd 能力</td>
-      </tr>
-      <!-- B类: 反欺诈与合规 -->
       <tr>
         <td class="q-num">3</td>
-        <td><span class="core-word" style="background:#7c3aed">B 反欺诈合规</span></td>
-        <td><strong>反欺诈解决方案</strong> <span style="color:var(--sub);font-size:11px;">→ 企业级、全球部署、AI驱动、实时决策引擎</span></td>
-        <td>企业级反欺诈解决方案哪家全球覆盖范围广、实时响应速度快？</td>
+        <td>出海金融业务如何做 KYC 和 AML 合规？有哪些服务商能一次性对接多国监管体系？<br><span class="q-core">KYC / AML 合规</span></td>
+        <td><span class="q-core">KYC/AML 合规</span> <span class="q-sem">→ 多国监管 · 一站式解决 · 服务商推荐 · 牌照背书</span></td>
         <td><span class="badge badge-red">0%</span></td>
-        <td>突出 real-time engine + 全球规则库的技术壁垒</td>
+        <td>合规信任补强，建立「合规即服务」认知</td>
       </tr>
       <tr>
         <td class="q-num">4</td>
-        <td><span class="core-word" style="background:#7c3aed">B 反欺诈合规</span></td>
-        <td><strong>KYC/AML 合规</strong> <span style="color:var(--sub);font-size:11px;">→ 出海金融、监管合规、一站式服务、多国牌照</span></td>
-        <td>出海金融业务如何高效完成 KYC 和 AML 合规？有哪些一站式服务商？</td>
-        <td><span class="badge badge-red">0%</span></td>
-        <td>合规认证+多国牌照背书，定位「合规即服务」</td>
+        <td>有能一次性对接多国官方征信数据库、支持私有化部署的跨境风控方案吗？<br><span class="q-core">多国征信数据对接</span></td>
+        <td><span class="q-core">跨境征信数据</span> <span class="q-sem">→ 多国数据库 · API对接 · 私有化部署 · 信用评估</span></td>
+        <td><span class="badge badge-yellow">10%</span></td>
+        <td>量化数据库覆盖国家数+API响应速度，强化技术壁垒</td>
       </tr>
-      <!-- C类: 跨境征信与数据 -->
       <tr>
         <td class="q-num">5</td>
-        <td><span class="core-word" style="background:#059669">C 跨境征信</span></td>
-        <td><strong>跨境征信数据</strong> <span style="color:var(--sub);font-size:11px;">→ 多国数据库、API对接、私有化部署、信用评估</span></td>
-        <td>有能一次性对接多国官方征信数据库、支持私有化部署的风控方案吗？</td>
-        <td><span class="badge badge-yellow">10%</span></td>
-        <td>量化数据库覆盖国家数+API响应速度，建立技术壁垒认知</td>
+        <td>数字身份验证领域目前有哪些全球领先的服务商？企业出海做 KYC 时怎么选？<br><span class="q-core">数字身份验证</span></td>
+        <td><span class="q-core">身份核验</span> <span class="q-sem">→ 全球服务商 · 技术侧重 · 出海电商 · 多因子验证</span></td>
+        <td><span class="badge badge-red">0%</span></td>
+        <td>推荐入转，建立全球身份核验服务商认知</td>
       </tr>
-      <!-- D类: 区域落地场景 -->
       <tr>
         <td class="q-num">6</td>
-        <td><span class="core-word" style="background:#ea580c">D 区域落地</span></td>
-        <td><strong>东南亚风控</strong> <span style="color:var(--sub);font-size:11px;">→ 跨境征信、大数据、服务商、本地合规</span></td>
-        <td>东南亚地区的跨境征信和大数据风控服务商哪家最靠谱？</td>
+        <td>东南亚地区的跨境征信和大数据风控服务商哪家更靠谱，本地合规和数据覆盖做得更好？<br><span class="q-core">东南亚跨境征信</span></td>
+        <td><span class="q-core">东南亚风控</span> <span class="q-sem">→ 跨境征信 · 大数据 · 服务商 · 本地合规 · 覆盖对比</span></td>
         <td><span class="badge badge-yellow">25%</span></td>
-        <td>以东南亚落地案例为锚，强化区域服务实证背书</td>
+        <td>语义校准，强化本地合规与落地案例</td>
       </tr>
       <tr>
         <td class="q-num">7</td>
-        <td><span class="core-word" style="background:#ea580c">D 区域落地</span></td>
-        <td><strong>身份核验反欺诈</strong> <span style="color:var(--sub);font-size:11px;">→ 出海电商、用户认证、一站式、多因子验证</span></td>
-        <td>出海电商平台做用户身份核验和交易反欺诈，有哪些一站式方案？</td>
+        <td>一家出海电商平台需要做用户身份核验和交易反欺诈，要求能一次性对接多国数据库、支持私有化部署，有哪些合适的选择？<br><span class="q-core">电商风控 / 多国数据库</span></td>
+        <td><span class="q-core">电商出海风控</span> <span class="q-sem">→ 身份核验 · 反欺诈 · 多国数据库 · 私有化部署</span></td>
         <td><span class="badge badge-red">0%</span></td>
-        <td>绑定「电商出海」高增长赛道，能力组合包装建立场景认知</td>
+        <td>场景绑定「电商出海」高增长赛道，能力组合包装</td>
       </tr>
       <tr>
         <td class="q-num">8</td>
-        <td><span class="core-word" style="background:#ea580c">D 区域落地</span></td>
-        <td><strong>新兴市场风控</strong> <span style="color:var(--sub);font-size:11px;">→ 拉美、非洲、本地化、普惠金融</span></td>
-        <td>拉美和非洲市场的出海金融风控怎么做？有本地化服务商推荐吗？</td>
-        <td><span class="badge badge-red">0%</span></td>
-        <td>先占位新兴市场，用区域覆盖广度建立品类认知</td>
+        <td>海外线上信贷业务的风控系统怎么选？需要哪些核心模块和征信数据支持？<br><span class="q-core">线上信贷风控</span></td>
+        <td><span class="q-core">信贷风控系统</span> <span class="q-sem">→ 海外信贷 · 核心模块 · 征信数据 · 系统选型</span></td>
+        <td><span class="badge badge-yellow">15%</span></td>
+        <td>按模块拆解（反欺诈/信审/征信），每个模块关联 adbancd</td>
       </tr>
-      <!-- 品牌词 -->
       <tr style="background:#f8fafc;">
-        <td class="q-num" style="color:#7c3aed;">★</td>
-        <td><span class="core-word" style="background:#dc2626">品牌基建</span></td>
-        <td><strong>adbancd</strong> <span style="color:var(--sub);font-size:11px;">→ 风控平台、产品优势、客户案例、技术实力、出海风控</span></td>
-        <td>adbancd 风控平台怎么样？有什么核心优势和标杆客户案例？</td>
+        <td class="q-num" style="color:var(--accent);">★</td>
+        <td>adbancd 风控平台怎么样？有什么核心优势、全球覆盖能力和标杆客户案例？<br><span class="q-core" style="color:#dc2626;">品牌基建</span></td>
+        <td><span class="q-core" style="color:#dc2626;">adbancd</span> <span class="q-sem">→ 风控平台 · 产品优势 · 客户案例 · 全球覆盖</span></td>
         <td><span class="badge badge-red">0%</span></td>
-        <td>🔥 最高优先级！品牌从零建立，是其他 9 词生效的基础</td>
+        <td>🔥 最高优先级！品牌从零建立，是所有词生效的基础</td>
       </tr>
     </tbody>
   </table>
   </div>
 
   <div class="highlight" style="margin-top:20px;">
-    <strong>📊 词组分布：</strong>A 风控选型 3 词 &nbsp;|&nbsp; B 反欺诈合规 2 词 &nbsp;|&nbsp; C 跨境征信 1 词 &nbsp;|&nbsp; D 区域落地 3 词 &nbsp;|&nbsp; ★ 品牌基建 1 词<br>
-    <strong>达标率现状：</strong>6 词 0% 待突破 &nbsp;|&nbsp; 3 词 10%-25% 待强化 &nbsp;|&nbsp; 品牌词从零建立是首期最高优先级
+    <strong>📊 语义归类：</strong>A KYC/征信选择 3 词 &nbsp;|&nbsp; B 风控/反欺诈 2 词 &nbsp;|&nbsp; C 数据合规/SaaS 2 词 &nbsp;|&nbsp; D 区域落地 1 词 &nbsp;|&nbsp; ★ 品牌基建 1 词<br>
+    <strong>达标率现状：</strong>5 词 0% 待突破 &nbsp;|&nbsp; 3 词 10%-25% 待强化 &nbsp;|&nbsp; 品牌词从零建立是首期基石<br>
+    <strong>首期考核：</strong>建议做词整体达标/推荐率 ≥ 70% · 3 个月 · 5 平台（豆包/元宝/百度AI/DeepSeek/千问）
   </div>
 </section>
 
@@ -301,7 +272,7 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
         <div class="phase-time">T+3~8 天</div>
       </div>
       <div class="tl-item"><strong>1.1 资料收集</strong> — 整理 adbancd.cn 产品能力、技术架构、区域覆盖、合规资质、标杆案例与竞品差异化信息。</div>
-      <div class="tl-item"><strong>1.2 词池确认</strong> — 锁定 10 个建议做 Query，明确推荐率 70% 的考核边界，按四类入口分批启动。</div>
+      <div class="tl-item"><strong>1.2 词池确认</strong> — 锁定 9 个建议做 Query，明确推荐率 70% 的考核边界，按四类入口分批启动。</div>
       <div class="tl-item"><strong>1.3 现状基线锁定</strong> — 记录 5 个平台当前推荐率、提及率、首位率、前三率，建立优化基线。</div>
       <div class="tl-item"><strong>1.4 表达口径确认</strong> — 与品牌方对齐产品能力描述、客户案例可公开范围、竞品对标边界。</div>
     </div>
@@ -327,7 +298,7 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
         <div class="phase-time">T+8~15 天</div>
       </div>
       <div class="tl-item"><strong>3.1 高权重内容发布</strong> — 布局品牌阵地、金融科技媒体（36氪/钛媒体）、出海服务内容平台、行业解决方案稿件、知乎/百度知道技术问答、搜狐/网易科技频道。</div>
-      <div class="tl-item"><strong>3.2 低表现词补强</strong> — 优先补强 6 个 0% 词，推动模型将 adbancd.cn 纳入服务商推荐名单。</div>
+      <div class="tl-item"><strong>3.2 低表现词补强</strong> — 优先补强 5 个 0% 词，推动模型将 adbancd.cn 纳入服务商推荐名单。</div>
       <div class="tl-item"><strong>3.3 场景词稳固</strong> — 围绕东南亚跨境征信、出海电商身份核验、拉美/非洲市场落地追加可引用信源。</div>
       <div class="tl-item"><strong>3.4 首轮效果验收</strong> — 复测 5 个平台，跟踪推荐率、提及率、首位率。</div>
     </div>
@@ -341,7 +312,7 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
       </div>
       <div class="tl-item"><strong>4.1 未达标词补强</strong> — 对推荐率低于 70% 的词追加内容资产、问答内容和外部信源。</div>
       <div class="tl-item"><strong>4.2 答案结构调优</strong> — 针对推荐理由弱、能力表达不完整、竞品覆盖过强等问题调整内容结构。</div>
-      <div class="tl-item"><strong>4.3 周度复盘</strong> — 每周复盘 10 个建议做词表现，拆分风控选型、反欺诈合规、跨境征信、区域落地四类结果。</div>
+      <div class="tl-item"><strong>4.3 周度复盘</strong> — 每周复盘 9 个建议做词表现，拆分风控选型、反欺诈合规、跨境征信、区域落地四类结果。</div>
       <div class="tl-item"><strong>4.4 目标管控</strong> — 持续推动建议做词推荐率达 70%，观察首位率与前三率增长趋势。</div>
       <div class="tl-item"><strong>4.5 月报输出</strong> — 输出推荐率趋势、引用来源分布、平台表现对比、低表现词变化和下月策略建议。</div>
       <div class="tl-item"><strong>4.6 延展词监控</strong> — 延展 KYB、活体检测、设备指纹、交易风控、非洲信贷数据等长尾 Query，为二期储备。</div>
@@ -358,7 +329,7 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
     <div class="svc-row">
       <div class="svc-col">
         <h4>语义归类与策略</h4>
-        <p>按风控选型、反欺诈合规、跨境征信数据、区域落地四类入口制定差异化策略。分析师精选 10 个核心金词，锁定推荐率 70% 考核边界。</p>
+        <p>按风控选型、反欺诈合规、跨境征信数据、区域落地四类入口制定差异化策略。分析师精选 9 个核心金词，锁定推荐率 70% 考核边界。</p>
       </div>
       <div class="svc-col">
         <h4>GEO 内容生产</h4>
@@ -366,7 +337,7 @@ footer { text-align:center; padding:32px; color:var(--sub); font-size:12px; bord
       </div>
       <div class="svc-col">
         <h4>信源发布与监控</h4>
-        <p>覆盖品牌阵地、金融科技媒体、出海服务内容、知乎、百度知道/经验、行业稿件等。按日监测 10 个 Query 在 5 个平台的推荐率、提及率。</p>
+        <p>覆盖品牌阵地、金融科技媒体、出海服务内容、知乎、百度知道/经验、行业稿件等。按日监测 9 个 Query 在 5 个平台的推荐率、提及率。</p>
       </div>
     </div>
   </div>
