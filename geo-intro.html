@@ -139,6 +139,29 @@ footer { text-align: center; padding: 32px; color: var(--sub); font-size: 12px; 
 
 /* Redline Alert */
 .alert { background: var(--red-bg); border-left: 3px solid var(--red); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13px; color: var(--red); margin-top: 20px; }
+
+/* Modal */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:1000; align-items:center; justify-content:center; }
+.modal-overlay.show { display:flex; }
+.modal-box { background:#fff; border-radius:16px; padding:32px; width:90%; max-width:440px; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.2); position:relative; }
+.modal-box h3 { font-size:20px; margin-bottom:6px; }
+.modal-box .m-sub { font-size:13px; color:var(--sub); margin-bottom:20px; }
+.modal-box .close-btn { position:absolute; top:16px; right:16px; width:32px; height:32px; border:none; background:var(--bg); border-radius:50%; font-size:18px; cursor:pointer; color:var(--sub); display:flex; align-items:center; justify-content:center; transition:.2s; }
+.modal-box .close-btn:hover { background:#e2e8f0; color:var(--text); }
+.form-group { margin-bottom:16px; }
+.form-group label { display:block; font-size:13px; font-weight:600; margin-bottom:4px; color:var(--text); }
+.form-group label .req { color:var(--red); }
+.form-group input, .form-group textarea { width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:14px; font-family:inherit; transition:.2s; resize:vertical; }
+.form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,.1); }
+.form-submit { width:100%; padding:12px; background:var(--accent); color:#fff; border:none; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; transition:.2s; }
+.form-submit:hover { background:var(--accent-dark); transform:translateY(-1px); }
+.form-submit:disabled { opacity:.6; cursor:not-allowed; }
+.form-err { font-size:12px; color:var(--red); margin-top:4px; display:none; }
+.form-err.show { display:block; }
+.success-msg { display:none; text-align:center; padding:20px 0; }
+.success-msg .s-icon { font-size:48px; margin-bottom:12px; }
+.success-msg h3 { font-size:20px; color:var(--green); margin-bottom:8px; }
+.success-msg p { font-size:14px; color:var(--sub); line-height:1.7; }
 </style>
 </head>
 <body>
@@ -149,8 +172,8 @@ footer { text-align: center; padding: 32px; color: var(--sub); font-size: 12px; 
   <h1>360智见 <span>2.0</span> — 让品牌被 AI 主动推荐</h1>
   <p class="sub">打通售前诊断→知识图谱→语义分析→拓词生文→信源分发→售后验收全链路闭环<br>覆盖 DeepSeek、豆包、Kimi 等 7 大主流 AI 平台，承诺达标率 ≥80%</p>
   <div class="cta">
-    <a href="#contact" class="cta-primary">获取品牌诊断报告</a>
-    <a href="#how" class="cta-secondary">了解如何做到 →</a>
+    <a href="javascript:void(0)" class="cta-primary" onclick="openForm()">获取品牌诊断报告</a>
+    <a href="https://e.360.cn" target="_blank" class="cta-secondary">了解如何做到 →</a>
   </div>
 </section>
 
@@ -531,6 +554,102 @@ footer { text-align: center; padding: 32px; color: var(--sub); font-size: 12px; 
 
 <footer>
   <p>360 商业化 · 360智见 GEO | 生成式引擎优化，让品牌被 AI 主动推荐</p>
+<!-- Form Modal -->
+<div class="modal-overlay" id="formModal">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeForm()">✕</button>
+    <div id="formContent">
+      <h3>获取品牌诊断报告</h3>
+      <p class="m-sub">填写以下信息，我们将为您提供免费品牌 AI 健康诊断</p>
+      <div class="form-group">
+        <label>公司名称 <span class="req">*</span></label>
+        <input type="text" id="f_company" placeholder="请输入公司名称">
+        <div class="form-err" id="err_company">请输入公司名称</div>
+      </div>
+      <div class="form-group">
+        <label>业务领域 <span class="req">*</span></label>
+        <input type="text" id="f_business" placeholder="例如：金融科技、教育培训、医疗健康">
+        <div class="form-err" id="err_business">请输入业务领域</div>
+      </div>
+      <div class="form-group">
+        <label>联系人 <span class="req">*</span></label>
+        <input type="text" id="f_name" placeholder="请输入联系人姓名">
+        <div class="form-err" id="err_name">请输入联系人</div>
+      </div>
+      <div class="form-group">
+        <label>手机号 <span class="req">*</span></label>
+        <input type="tel" id="f_phone" placeholder="请输入手机号">
+        <div class="form-err" id="err_phone">请输入有效的手机号</div>
+      </div>
+      <button class="form-submit" onclick="submitForm()">提交，获取诊断报告</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="s-icon">✅</div>
+      <h3>提交成功！</h3>
+      <p>我们将在 <b>24 小时内</b>与您联系<br>为您提供免费品牌 AI 健康诊断报告</p>
+      <p style="margin-top:12px;">如需紧急咨询，请直接联系<br>📱 <b>13212801307</b></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById('formModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeForm() {
+  document.getElementById('formModal').classList.remove('show');
+  document.body.style.overflow = '';
+  // Reset form after 300ms to allow close animation
+  setTimeout(function(){
+    document.getElementById('formContent').style.display = '';
+    document.getElementById('successMsg').style.display = '';
+    document.getElementById('f_company').value = '';
+    document.getElementById('f_business').value = '';
+    document.getElementById('f_name').value = '';
+    document.getElementById('f_phone').value = '';
+    document.querySelectorAll('.form-err').forEach(function(e){ e.classList.remove('show'); });
+  }, 300);
+}
+function submitForm() {
+  var company = document.getElementById('f_company').value.trim();
+  var business = document.getElementById('f_business').value.trim();
+  var name = document.getElementById('f_name').value.trim();
+  var phone = document.getElementById('f_phone').value.trim();
+  var valid = true;
+  document.querySelectorAll('.form-err').forEach(function(e){ e.classList.remove('show'); });
+  if (!company) { document.getElementById('err_company').classList.add('show'); valid = false; }
+  if (!business) { document.getElementById('err_business').classList.add('show'); valid = false; }
+  if (!name) { document.getElementById('err_name').classList.add('show'); valid = false; }
+  if (!phone || !/^1[3-9]\d{9}$/.test(phone)) { document.getElementById('err_phone').classList.add('show'); valid = false; }
+  if (!valid) return;
+
+  // Send via mailto
+  var subject = encodeURIComponent('【GEO诊断申请】' + company + ' - ' + name);
+  var body = encodeURIComponent(
+    '公司名称：' + company + '\n' +
+    '业务领域：' + business + '\n' +
+    '联 系 人：' + name + '\n' +
+    '手机号码：' + phone + '\n' +
+    '提交时间：' + new Date().toLocaleString('zh-CN') + '\n\n' +
+    '---\n来源：360智见 GEO 外宣页'
+  );
+  window.open('mailto:13212801307@qq.com?subject=' + subject + '&body=' + body, '_blank');
+
+  // Show success
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+// Close modal on overlay click
+document.getElementById('formModal').addEventListener('click', function(e){
+  if (e.target === this) closeForm();
+});
+// Close on Escape
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeForm();
+});
+</script>
+
 </footer>
 
 </body>
