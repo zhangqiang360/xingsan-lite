@@ -163,6 +163,66 @@ footer { text-align: center; padding: 32px; color: var(--sub); font-size: 12px; 
 .success-msg .s-icon { font-size:48px; margin-bottom:12px; }
 .success-msg h3 { font-size:20px; color:var(--green); margin-bottom:8px; }
 .success-msg p { font-size:14px; color:var(--sub); line-height:1.7; }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero { padding: 48px 16px 40px; }
+  .hero h1 { font-size: 26px; letter-spacing: -0.5px; }
+  .hero .sub { font-size: 15px; }
+  .hero .cta { flex-direction: column; align-items: center; }
+  .hero .cta a { width: 100%; max-width: 280px; text-align: center; padding: 12px 24px; font-size: 14px; }
+  .hero .badge { font-size: 12px; padding: 4px 12px; }
+
+  /* Sections */
+  .section { padding: 40px 0; }
+  .section-title { font-size: 22px; }
+  .section-desc { font-size: 14px; }
+
+  /* Container */
+  .container { padding: 0 16px; }
+
+  /* Stats grid */
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat-card { padding: 20px 14px; }
+  .stat-card .num { font-size: 28px; }
+  .stat-card .label { font-size: 12px; }
+
+  /* CREATE grid - 3 columns on mobile */
+  .create-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .create-step { padding: 14px 8px; }
+  .create-step .letter { font-size: 24px; }
+  .create-step .name { font-size: 12px; }
+
+  /* Tier cards */
+  .tier-card { padding: 24px 20px; }
+
+  /* Price table */
+  .price-table table { font-size: 12px; }
+  .price-table th, .price-table td { padding: 8px 10px; }
+
+  /* Platform grid */
+  .platform-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* CTA section */
+  .cta-section h2 { font-size: 22px; }
+  .cta-section .contact-info { flex-direction: column; align-items: center; gap: 10px; }
+
+  /* Modal */
+  .modal-box { width: 95%; padding: 24px 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 22px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat-card .num { font-size: 24px; }
+  .create-grid { grid-template-columns: repeat(2, 1fr); }
+  .platform-grid { grid-template-columns: 1fr; }
+  .price-table table { font-size: 11px; }
+  .price-table th, .price-table td { padding: 6px 8px; }
+  .section-title { font-size: 20px; }
+}
+
 </style>
 </head>
 <body>
